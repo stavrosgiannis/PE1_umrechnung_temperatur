@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PE1_umrechnung_temperatur", "PE1_umrechnung_temperatur.vcxproj", "{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Debug|x64.ActiveCfg = Debug|x64
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Debug|x64.Build.0 = Debug|x64
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Debug|x86.ActiveCfg = Debug|Win32
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Debug|x86.Build.0 = Debug|Win32
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Release|x64.ActiveCfg = Release|x64
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Release|x64.Build.0 = Release|x64
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Release|x86.ActiveCfg = Release|Win32
+		{E9351BE3-8EC9-406E-9724-CBF6C3AB2ED2}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {459E9BF1-44DA-4576-9179-992A5657DD85}
+	EndGlobalSection
+EndGlobal
