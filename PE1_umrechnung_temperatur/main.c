@@ -79,7 +79,7 @@ int main()
 			}
 
 	Bei der do-While Schleife wird die Bedingung erst nach dem ersten Schleifendurchlauf geprüft.
-	Es handelt sich um eine Bedingung für die Widerholung von Anweisungen.
+	Es handelt sich um eine Bedingung für die Wiederholung von Anweisungen.
 	*/
 	do {
 		printf("\nAus welchem Einheitensystem soll umgerechnet werden?\n\n");
