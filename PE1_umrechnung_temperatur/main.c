@@ -10,9 +10,9 @@
 /*
 Warnungen der "C Run-time Library" werden unterdrückt.
 CRT ist Bestandteil der C/C++ Standardbibliothek "stdlib.h".
-#define sind Makros, die bedingt definiert werden.
+#define sind Makros, die bedingt definiert werden.*/
 #define _CRT_SECURE_NO_WARNINGS 1
-*/
+
 
 //Die Standardbibliothek "Standardlibrary" wird inkludiert.
 #include <stdlib.h>
