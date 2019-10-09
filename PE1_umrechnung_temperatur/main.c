@@ -56,7 +56,7 @@ int main()
 	//Es wird eine reihe von Strichen ausgegeben und am Ende noch eine Newline hinzugefügt.
 	printf("----------------------------------------\n");
 
-	//HIER
+	//Hwefwef
 	do {
 		printf("\nAus welchem Einheitensystem soll umgerechnet werden?\n\n");
 		printf("1: grad C     2: grad F     3: K\n\n");
