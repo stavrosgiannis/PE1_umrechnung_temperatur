@@ -123,10 +123,10 @@ int main()
 		//und 3 für Kelvin entscheiden kann.
 		printf("\nIn welches Einheitensystem soll umgerechnet werden?\n\n");
 		printf("1: grad C     2: grad F     3: K\n\n");
-
 		printf("Ihre Wahl: ");
 		//Der Input des Nutzers wird in die Variabel "unitOut" gesetzt.
 		scanf("%i", &unitOut);
+		//BUG: FEHLER &
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
 		while (getchar() != '\n');
 
@@ -139,31 +139,77 @@ int main()
 		//Die Variable hinter switch(desiredConversion) gibt einen Rückgabewert einer Funktion oder einer Variable an. 
 		switch (desiredConversion)
 		{
+
 		//IM FALLE IST 12: Falls der Rückgabewert der Variable 12 ist, wird dieser case-Block ausgeführt.
 		case 12: 
+			//Die Formel um Celsius zu Fahrenheit umzurechnen lautet: (CELSIUS_WERT°C × 9/5) + 32 = FAHRENH_WERT °F
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" multipliziert mit 1.8 und 31.0 addiert.
 			tempOut = tempIn * 1.8 + 32.0;
+			//Die Celsius und Fahrenheit Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fgrad F\n\n", tempIn, tempOut);
+
+			printf("-----------------------------------------------------------\n");
+
+			int value;
+
+			value = (tempOut * 100) / 100;
+			printf(&value);
+			
+
+			for (int i = 0; i < value; i++)
+			{
+				printf("*");
+			}
+			printf("\n0% ----------------------------------------------------------- 100%\n");
+			//hier wird das switch-case Element gestopppt.
 			break;
+
+		//IM FALLE IST 13: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
 		case 13: 
+			//Die Formel um Celsius zu Kelvin umzurechnen lautet: CELSIUS_WERT°C + 273.15 = KELVIN_WERT °F
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273.15 addiert.
 			tempOut = tempIn + 273.15;
+			//Die Celsius und Kelvin Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fK\n\n", tempIn, tempOut);
+			//hier wird das switch-case Element gestopppt.
 			break;
-		case 21: 
+
+		//IM FALLE IST 21: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
+		case 21:
+			//Die Formel um Fahrenheit zu Celsius umzurechnen lautet: (FAHRENH_WERT - 32) x 9/5 = CELSIUS_WERT
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 9/5 multipliziert.
+			//BUG: FORMEL FALSCH
 			tempOut = (tempIn + 32.0) * 5.0 / 9.0;
 			printf("\n\n%.2fgrad F = %.2fgrad C\n\n", tempIn, tempOut);
+			//hier wird das switch-case Element gestopppt.
 			break;
+
+		//IM FALLE IST 23: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
 		case 23: 
+			//Die Formel um Fahrenheit zu Kelvin umzurechnen lautet: (FAHRENH_WERT - 32) x 9/5 = CELSIUS_WERT
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 9/5 multipliziert.
 			tempOut = (tempIn + 459.67) * 5.0 / 9.0;
 			printf("\n\n%.2fgrad F = %.2fK\n\n", tempIn, tempOut);
+			//hier wird das switch-case Element gestopppt.
 			break;
+
+		//IM FALLE IST 31: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
 		case 31: 
 			tempOut = tempIn + 273.15;
 			printf("\n\n%.2fK = %.2fgrad C\n\n", tempIn, tempOut);
+			//hier wird das switch-case Element gestopppt.
 			break;
+
+		//IM FALLE IST 32: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.	
 		case 32: 
 			tempOut = tempIn * 1.8 - 459.67;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
+
 		}
+		
+
+		
+		
 		printf("\n\nerneute Berechnung? (j/n)");
 		scanf("%c", &response);
 		while (getchar() != '\n');
