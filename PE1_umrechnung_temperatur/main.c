@@ -148,19 +148,7 @@ int main()
 			//Die Celsius und Fahrenheit Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fgrad F\n\n", tempIn, tempOut);
 
-			printf("-----------------------------------------------------------\n");
-
-			int value;
-
-			value = (tempOut * 100) / 100;
-			printf(&value);
 			
-
-			for (int i = 0; i < value; i++)
-			{
-				printf("*");
-			}
-			printf("\n0% ----------------------------------------------------------- 100%\n");
 			//hier wird das switch-case Element gestopppt.
 			break;
 
@@ -181,6 +169,22 @@ int main()
 			//BUG: FORMEL FALSCH
 			tempOut = (tempIn + 32.0) * 5.0 / 9.0;
 			printf("\n\n%.2fgrad F = %.2fgrad C\n\n", tempIn, tempOut);
+
+
+
+			printf("\n----------------------------------------------------------------------------------------------------\n");
+
+			float value;
+
+			value = (tempOut);
+
+			for (int i = 0; i < value; i++)
+			{
+				printf("*");
+			}
+			printf("\n----------------------------------------------------------------------------------------------------\n");
+			printf("0%cC												100%cC", 248, 248);
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
