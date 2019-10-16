@@ -143,10 +143,12 @@ int main()
 			//IM FALLE IST 12: Falls der Rückgabewert der Variable 12 ist, wird dieser case-Block ausgeführt.
 		case 12:
 			//Die Formel um Celsius zu Fahrenheit umzurechnen lautet: (CELSIUS_WERT°C × 9/5) + 32 = FAHRENH_WERT °F
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" multipliziert mit 1.8 und 31.0 addiert.
-			tempOut = tempIn * 1.8 + 32.0;
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" multipliziert mit 1.8 und 32.0 addiert.
+			tempOut = (tempIn * 9 / 5) + 32.0;
 			//Die Celsius und Fahrenheit Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fgrad F\n\n", tempIn, tempOut);
+
+			ascii_thermometer(tempOut, unitOut);
 
 			//hier wird das switch-case Element gestopppt.
 			break;
@@ -158,6 +160,9 @@ int main()
 			tempOut = tempIn + 273.15;
 			//Die Celsius und Kelvin Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fK\n\n", tempIn, tempOut);
+
+			ascii_thermometer(tempOut, unitOut);
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
