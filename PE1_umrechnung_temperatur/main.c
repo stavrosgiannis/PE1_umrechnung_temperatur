@@ -18,6 +18,8 @@ CRT ist Bestandteil der C/C++ Standardbibliothek "stdlib.h".
 //Die Standardbibliothek "Standard [i]nput [o]utput" wird inkludiert.
 #include <stdio.h>
 
+#include "thermometer.h"
+
 /*
 Die Startfunktion "main()" wird beim Start des Programms initiiert:
 Die Funktion 'int main()' ist equivalent zu 'int main(void)'.
@@ -176,19 +178,9 @@ int main()
 			tempOut = (tempIn + 32.0) * 5.0 / 9.0;
 			printf("\n\n%.2fgrad F = %.2fgrad C\n\n", tempIn, tempOut);
 
-			//ASCII-Thermometer
-			printf("\n----------------------------------------------------------------------------------------------------\n");
-
-			float value;
-
-			value = (tempOut);
-
-			for (int i = 0; i < value; i++)
-			{
-				printf("*");
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
 			}
-			printf("\n----------------------------------------------------------------------------------------------------\n");
-			printf("0%cC												100%cC", 248, 248);
 
 			//hier wird das switch-case Element gestopppt.
 			break;
