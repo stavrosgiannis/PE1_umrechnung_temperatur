@@ -20,6 +20,7 @@ CRT ist Bestandteil der C/C++ Standardbibliothek "stdlib.h".
 
 #include "thermometer.h"
 
+
 /*
 Die Startfunktion "main()" wird beim Start des Programms initiiert:
 Die Funktion 'int main()' ist equivalent zu 'int main(void)'.
