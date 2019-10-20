@@ -20,7 +20,6 @@ CRT ist Bestandteil der C/C++ Standardbibliothek "stdlib.h".
 
 #include "thermometer.h"
 
-
 /*
 Die Startfunktion "main()" wird beim Start des Programms initiiert:
 Die Funktion 'int main()' ist equivalent zu 'int main(void)'.
@@ -51,8 +50,8 @@ int main()
 	int desiredConversion;
 
 	/*Es wird eine Variable des Datentyps "char" deklariert.
-	Der Datentyp char hat einen Wertebereich von -128 bis 127*/
-	char response;
+	Der Datentyp unsigned char hat einen Wertebereich von 0 bis 255*/
+	unsigned char response;
 
 	/*
 	[print][formatted] ist eine Ausgabefunktion.
@@ -226,7 +225,7 @@ int main()
 			//Die Formel um Kelvin zu Fahrenheit umzurechnen lautet: (KELVIN_WERT - 273.15) x 9/5 + 32 = FAHRENH_WERT
 			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert und mit 9/5 multipliziert. Es wird 32 hinzu addiert.
 			//BUG: Formel falsch
-			tempOut = (tempIn - 273.15) * 9/5 + 32;
+			tempOut = (tempIn - 273.15) * 9 / 5 + 32;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestoppt.
 			break;
@@ -254,7 +253,7 @@ int main()
 			//Die Formel um Kelvin zu Celsius umzurechnen lautet: (KELVIN_WERT - 273.15) x 9/5 + 32 = FAHRENH_WERT
 			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert und mit 9/5 multipliziert. Es wird 32 hinzu addiert.
 			//BUG: Formel falsch
-			tempOut = (tempIn - 273.15) * 9/5 + 32;
+			tempOut = (tempIn - 273.15) * 9 / 5 + 32;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
 			//Hier wird das switch-case Element gestopppt.
 			break;
