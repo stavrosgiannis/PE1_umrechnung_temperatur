@@ -84,7 +84,7 @@ int main()
 	*/
 	do {
 		//Die CLI gibt einen Text aus mit entsprechenden Zeilen abständen
-		printf("\nAus welchem Einheitensystem soll umgerechnet werden?\n\n");
+	goback1:	printf("\nAus welchem Einheitensystem soll umgerechnet werden?\n\n");
 		printf("1: grad C     2: grad F     3: K	4:grad Romer\n\n");
 		printf("Ihre Wahl: ");
 		/*
@@ -111,6 +111,11 @@ int main()
 		scanf("%i", &unitIn);
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
 		while (getchar() != '\n');
+		if (unitIn <= 0 || unitIn >= 5)
+		{
+			printf("FEHLER: Bitte wählen Sie eins der vorgegebenen Einheiten!");
+			goto goback1;
+		}
 
 		//Hier wird wieder mit printf etwas Ausgegeben
 		printf("\nBitte geben Sie die umzurechnende Temperatur an: ");
@@ -122,7 +127,7 @@ int main()
 
 		//Hier wird die Ausgabe so angepasst, dass der Nutzer sich mit der Eingabe 1 für grad Celsius, 2 für grad Fahrenheit
 		//und 3 für Kelvin entscheiden kann.
-		printf("\nIn welches Einheitensystem soll umgerechnet werden?\n\n");
+	goback2:	printf("\nIn welches Einheitensystem soll umgerechnet werden?\n\n");
 		printf("1: grad C     2: grad F     3: K	4: Romer\n\n");
 		printf("Ihre Wahl: ");
 		//Der Input des Nutzers wird in die Variabel "unitOut" gesetzt.
@@ -130,6 +135,11 @@ int main()
 		//BUG: FEHLER &
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
 		while (getchar() != '\n');
+		if (unitIn <= 0 || unitIn >= 5)
+		{
+			printf("FEHLER: Bitte wählen Sie eins der vorgegebenen Temperaturen:");
+			goto goback2;
+		}
 
 		//die Variabel "desireConversion" bildet sich wenn man den Wert von "unitIn" mit der 10 multipliziert und noch
 		//den Wert der Variabel "unitOut" addiert.
@@ -280,9 +290,9 @@ int main()
 
 	1.	Das gewünschte Programm wurde bereits zum Teil entwickelt (siehe Anhang). Erschließen Sie sich das gegebene Programm und kommentieren Sie anschließend den Quelltext.	FERTIG
 	2.	In die Konversionen haben sich Bugs eingeschlichen, so dass die berechneten Temperaturen teilweise falsch sind. Erstellen Sie eine sinnvolle Menge an Testfällen (bevor Sie sie anwenden),
-		finden Sie die Fehler und korrigieren Sie sie.
+		finden Sie die Fehler und korrigieren Sie sie.	FERTIG
 	3.	Machen Sie das Programm robuster, indem Sie nur sinnvolle Eingaben erlauben (aus den gegebenen Einheiten, keine Temperatur unter dem absoluten Nullpunkt).
-	4.	Erweitern Sie das Programm um die Einheit Grad Rømer. 0°Rø entsprechhen dem Schmelzpunkt von Salzlake (-14,3°C), und 60°Rø entsprechen dem Siedepunkt von Wasser (100°C).
+	4.	Erweitern Sie das Programm um die Einheit Grad Rømer. 0°Rø entsprechhen dem Schmelzpunkt von Salzlake (-14,3°C), und 60°Rø entsprechen dem Siedepunkt von Wasser (100°C). FERTIG
 	5.	Stellen Sie das Ergebnis zusätzlich durch ein ASCII-Art-Thermometer dar (siehe Beispiel unten). Linkes Ende des Thermometers soll immer der Schmelzpunkt von Wasser sein (0°C),
 		rechter Endpunkt der Siedepunkt von Wasser (100°C). Die Skala soll immer mit der Ziel-Temperatureinheit beschriftet sein (nicht notwendigerweise °C).
 
