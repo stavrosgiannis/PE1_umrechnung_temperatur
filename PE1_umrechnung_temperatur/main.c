@@ -124,6 +124,11 @@ int main()
 		scanf("%f", &tempIn);
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
 		while (getchar() != '\n');
+		char c = getchar();
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+			printf("%c is an alphabet.", c);
+		else
+			printf("%c is not an alphabet.", c);
 
 		//Hier wird die Ausgabe so angepasst, dass der Nutzer sich mit der Eingabe 1 für grad Celsius, 2 für grad Fahrenheit
 		//und 3 für Kelvin entscheiden kann.
