@@ -85,7 +85,7 @@ int main()
 	do {
 		//Die CLI gibt einen Text aus mit entsprechenden Zeilen abständen
 		printf("\nAus welchem Einheitensystem soll umgerechnet werden?\n\n");
-		printf("1: grad C     2: grad F     3: K\n\n");
+		printf("1: grad C     2: grad F     3: K	4:grad Romer\n\n");
 		printf("Ihre Wahl: ");
 		/*
 		Die Funktion scanf bietet die Möglichkeiten die Eingabe des Nutzers auszulesen
@@ -175,12 +175,12 @@ int main()
 			//Hier wird das switch-case Element gestopppt.
 			break;
 
-			//IM FALLE IST 21: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
+			//IM FALLE IST 21: Falls der Rückgabewert der Variable 21 ist, wird dieser case-Block ausgeführt.
 		case 21:
-			//Die Formel um Fahrenheit zu Celsius umzurechnen lautet: (FAHRENH_WERT - 32) x 9/5 = CELSIUS_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 9/5 multipliziert.
+			//Die Formel um Fahrenheit zu Celsius umzurechnen lautet: (FAHRENH_WERT - 32) x 5/9 = CELSIUS_WERT
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 5/9 multipliziert.
 			//BUG: FORMEL FALSCH
-			tempOut = (tempIn - 32.0) * 9.0 / 5.0;
+			tempOut = (tempIn - 32) * 5 / 9;
 			printf("\n\n%.2fgrad F = %.2fgrad C\n\n", tempIn, tempOut);
 
 			if (ascii_thermometer(tempOut, unitOut) != 0) {
@@ -190,12 +190,12 @@ int main()
 			//hier wird das switch-case Element gestopppt.
 			break;
 
-			//IM FALLE IST 23: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
+			//IM FALLE IST 23: Falls der Rückgabewert der Variable 23 ist, wird dieser case-Block ausgeführt.
 		case 23:
-			//Die Formel um Fahrenheit zu Kelvin umzurechnen lautet: (FAHRENH_WERT - 32) x 5/9 + 273.15 = CELSIUS_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 5/9 multipliziert. Es wird 273.15 hinzu addiert.
+			//Die Formel um Fahrenheit zu Kelvin umzurechnen lautet: (FAHRENH_WERT + 459.67) x 5/9 = KELVIN_WERT
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 459.67 addiert und mit 5/9 multipliziert.
 			//BUG: Formel falsch
-			tempOut = (tempIn - 32) * 5.0 / 9.0 + 273.15;
+			tempOut = (tempIn + 459.67) * 5 / 9;
 			printf("\n\n%.2fgrad F = %.2fK\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestopppt.
 			break;
@@ -215,17 +215,17 @@ int main()
 			//Die Formel um Kelvin zu Celsius umzurechnen lautet: KELVIN_WERT - 273.15 = CELSIUS_WERT
 			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert.
 			//BUG: Formel falsch
-			tempOut = tempIn + 273.15;
+			tempOut = tempIn - 273.15;
 			printf("\n\n%.2fK = %.2fgrad C\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestopppt.
 			break;
 
 			//IM FALLE IST 32: Falls der Rückgabewert der Variable 32 ist, wird dieser case-Block ausgeführt.
 		case 32:
-			//Die Formel um Kelvin zu Fahrenheit umzurechnen lautet: (KELVIN_WERT - 273.15) x 9/5 + 32 = FAHRENH_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert und mit 9/5 multipliziert. Es wird 32 hinzu addiert.
+			//Die Formel um Kelvin zu Fahrenheit umzurechnen lautet: (KELVIN_WERT x 1.8) + 459.67 = FAHRENH_WERT
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 1,8 multipliziert und mit 459,67 addiert.
 			//BUG: Formel falsch
-			tempOut = (tempIn - 273.15) * 9 / 5 + 32;
+			tempOut = (tempIn * 9 / 5) + 459.67;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestoppt.
 			break;
@@ -239,11 +239,12 @@ int main()
 			printf("\n\n%.2fK = %.2fgrad Romer\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestoppt.
 			break;
+			//IM FALLE IST 41: Falls der Rückgabewert der Variable 41 ist, wird dieser case-Block ausgeführt.
 		case 41:
 			//Die Formel um Kelvin zu Celsius umzurechnen lautet: KELVIN_WERT - 273.15 = CELSIUS_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert.
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 7,5 subtrahiert und mit 40/21 multipliziert.
 			//BUG: Formel falsch
-			tempOut = tempIn - 273.15;
+			tempOut = (tempIn - 7.5) * 40 / 21;
 			printf("\n\n%.2fgrad Romer = %.2fgrad C\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestopppt.
 			break;
@@ -251,19 +252,19 @@ int main()
 			//IM FALLE IST 32: Falls der Rückgabewert der Variable 13 ist, wird dieser case-Block ausgeführt.
 		case 42:
 			//Die Formel um Kelvin zu Celsius umzurechnen lautet: (KELVIN_WERT - 273.15) x 9/5 + 32 = FAHRENH_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert und mit 9/5 multipliziert. Es wird 32 hinzu addiert.
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 2,25 multipliziert und mit 32 addiert.
 			//BUG: Formel falsch
-			tempOut = (tempIn - 273.15) * 9 / 5 + 32;
+			tempOut = (tempIn * 2.25) + 32;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
 			//Hier wird das switch-case Element gestopppt.
 			break;
 
-			//IM FALLE IST 44: Falls der Rückgabewert der Variable 44 ist, wird dieser case-Block ausgeführt.
-		case 44:
+			//IM FALLE IST 43: Falls der Rückgabewert der Variable 44 ist, wird dieser case-Block ausgeführt.
+		case 43:
 			//Die Formel um Kelvin zu Celsius umzurechnen lautet: KELVIN_WERT - 273.15 = CELSIUS_WERT
-			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 273,15 subtrahiert.
+			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 7,5 subtrahiert und mit 50/21 multipliziert. Am ende wird 273,15 hinzu addiert.
 			//BUG: Formel falsch
-			tempOut = tempIn - 273.15;
+			tempOut = (tempIn - 7.5) * 40 / 21 + 273.15;
 			printf("\n\n%.2fK = %.2fgrad C\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestopppt.
 			break;
