@@ -253,6 +253,7 @@ int main()
 			printf("\n\n%.2fK = %.2fgrad Romer\n\n", tempIn, tempOut);
 			//hier wird das switch-case Element gestoppt.
 			break;
+
 			//IM FALLE IST 41: Falls der Rückgabewert der Variable 41 ist, wird dieser case-Block ausgeführt.
 		case 41:
 			//Die Formel um Romer zu Celsius umzurechnen lautet: (ROEMR_WERT - 7,5) * 40/21 = CELSIUS_WERT
