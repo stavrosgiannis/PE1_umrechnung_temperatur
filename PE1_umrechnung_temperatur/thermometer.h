@@ -53,14 +53,24 @@ int ascii_thermometer(float tempOut, _int32 unitOut)
 	}
 	else if (unitOut == 3)
 	{
-		//ASCII-Thermometer Fahrenheit
+		//ASCII-Thermometer Kelvin
 		printf("\n----------------------------------------------------------------------------------------------------\n");
 
-		tempOut = tempOut / 3.75;
+		float new_temp = tempOut / 5 ;
 
-		for (int i = 0; i < tempOut; i++)
+		for (int i = 0; i < new_temp; i++)
 		{
-			printf("*");
+			if (i > 99) {
+				printf("+");
+				i = new_temp;
+			}
+			else {
+				printf("*");
+			}
+
+			if (i >= new_temp - 1) {
+				printf("| %f%cK", tempOut, 248);
+			}
 		}
 		printf("\n----------------------------------------------------------------------------------------------------\n");
 		printf("255,37%cK												373,15%cK\n", 248, 248);

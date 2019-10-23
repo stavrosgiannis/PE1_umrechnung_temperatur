@@ -121,14 +121,17 @@ int main()
 		printf("\nBitte geben Sie die umzurechnende Temperatur an: ");
 		//Dieses mal wird die Eingabe des Nutzers als float in die Variable "tempIn" gespeichert.
 		//Dies ermöglicht eine Eingabe als Dezimalzahl, welche eine Temperatur auch sein kann.
-		scanf("%f", &tempIn);
+	go_temp1:		scanf("%f", &tempIn);
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
-		while (getchar() != '\n');
 		char c = getchar();
-		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-			printf("%c is an alphabet.", c);
-		else
-			printf("%c is not an alphabet.", c);
+		while ((c != '\n') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+			
+			c == NULL;
+			printf("\n%c ", c);
+			printf("Nicht gültig! Bitte geben Sie eine gültige Temperatur ein:\n");
+			goto go_temp1;
+		}
+		
 
 		//Hier wird die Ausgabe so angepasst, dass der Nutzer sich mit der Eingabe 1 für grad Celsius, 2 für grad Fahrenheit
 		//und 3 für Kelvin entscheiden kann.
