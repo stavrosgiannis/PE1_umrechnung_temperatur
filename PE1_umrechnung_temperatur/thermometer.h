@@ -114,7 +114,7 @@ int ascii_thermometer(float tempOut, _int32 unitOut)
 			}
 
 			if (i >= new_temp - 1) {
-				printf("| %f%cK", tempOut, 248);
+				printf("| %f%cRo", tempOut, 248);
 			}
 		}
 		printf("\n----------------------------------------------------------------------------------------------------\n");
