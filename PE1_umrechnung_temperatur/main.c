@@ -136,7 +136,7 @@ int main()
 		//Hier wird die Ausgabe so angepasst, dass der Nutzer sich mit der Eingabe 1 für grad Celsius, 2 für grad Fahrenheit
 		//und 3 für Kelvin entscheiden kann.
 	goback2:	printf("\nIn welches Einheitensystem soll umgerechnet werden?\n\n");
-		printf("1: grad C     2: grad F     3: K	4: Romer\n\n");
+		printf("1: grad C     2: grad F     3: K	4: grad Romer\n\n");
 		printf("Ihre Wahl: ");
 		//Der Input des Nutzers wird in die Variabel "unitOut" gesetzt.
 		scanf("%i", &unitOut);
@@ -145,7 +145,7 @@ int main()
 		while (getchar() != '\n');
 		if (unitIn <= 0 || unitIn >= 5)
 		{
-			printf("FEHLER: Bitte wählen Sie eins der vorgegebenen Temperaturen:");
+			printf("FEHLER: Bitte wählen Sie eins der vorgegebenen Einheiten!");
 			goto goback2;
 		}
 
@@ -166,7 +166,9 @@ int main()
 			//Die Celsius und Fahrenheit Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fgrad F\n\n", tempIn, tempOut);
 
-			ascii_thermometer(tempOut, unitOut);
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
 
 			//hier wird das switch-case Element gestopppt.
 			break;
@@ -179,7 +181,9 @@ int main()
 			//Die Celsius und Kelvin Zahl werden als float und eine Stelle nach dem Komma ausgegeben. Dies erkennt man an ".2f".
 			printf("\n\n%.2fgrad C = %.2fK\n\n", tempIn, tempOut);
 
-			ascii_thermometer(tempOut, unitOut);
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
 
 			//hier wird das switch-case Element gestopppt.
 			break;
@@ -190,6 +194,11 @@ int main()
 			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 21/40 multipliziert und 7.5 hinzu addiert.
 			tempOut = (tempIn * 21 / 40) + 7.5;
 			printf("\n\n%.2fgrad C = %.2fgrad Romer\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//Hier wird das switch-case Element gestopppt.
 			break;
 
@@ -215,6 +224,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn + 459.67) * 5 / 9;
 			printf("\n\n%.2fgrad F = %.2fK\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
@@ -224,6 +238,11 @@ int main()
 			//Die Variable "tempOut" ist das Ergebnis von "tempIn" mit 32 subtrahiert und mit 7/24 multipliziert. Es wird 7.55 hinzu addiert.
 			tempOut = (tempIn - 32) * 7 / 24 + 7.5;
 			printf("\n\n%.2fgrad F = %.2fgrad Romer\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
@@ -234,6 +253,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = tempIn - 273.15;
 			printf("\n\n%.2fK = %.2fgrad C\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
@@ -244,6 +268,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn * 9 / 5) + 459.67;
 			printf("\n\n%.2fK = %.2fgrad F\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestoppt.
 			break;
 
@@ -254,6 +283,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn - 273.15) * 21 / 40 + 7.5;
 			printf("\n\n%.2fK = %.2fgrad Romer\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestoppt.
 			break;
 
@@ -264,6 +298,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn - 7.5) * 40 / 21;
 			printf("\n\n%.2fgrad Romer = %.2fgrad C\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 
@@ -274,6 +313,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn * 2.25) + 32;
 			printf("\n\n%.2fgrad Romer = %.2fgrad F\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//Hier wird das switch-case Element gestopppt.
 			break;
 
@@ -284,6 +328,11 @@ int main()
 			//BUG: Formel falsch
 			tempOut = (tempIn - 7.5) * 40 / 21 + 273.15;
 			printf("\n\n%.2fgrad Romer = %.2fK\n\n", tempIn, tempOut);
+
+			if (ascii_thermometer(tempOut, unitOut) != 0) {
+				printf("ERROR: ascii_thermometer konnte nicht angezeigt werden.");
+			}
+
 			//hier wird das switch-case Element gestopppt.
 			break;
 		}
