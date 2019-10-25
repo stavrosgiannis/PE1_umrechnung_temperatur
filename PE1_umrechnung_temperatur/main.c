@@ -124,14 +124,53 @@ int main()
 	go_temp1:		scanf("%f", &tempIn);
 		//Die Schleife folgt erst dann fort, wenn die Eingabe des Nutzers nicht nur eine "neue Zeile" ist.
 		char c = getchar();
-		while ((c != '\n') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-			
+		int negative_temp;
+
+		if ((c != '\n') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
 			c == NULL;
 			printf("\n%c ", c);
 			printf("Nicht gültig! Bitte geben Sie eine gültige Temperatur ein:\n");
 			goto go_temp1;
 		}
-		
+		else
+		{
+			if (unitIn == 1)
+			{
+				negative_temp = -273.15;
+
+				if (tempIn < negative_temp) {
+					printf("Der eingegebene Wert liegt unter dem absolutem Nullpunkt! Bitte geben Sie einen neuen Wert ein:\n");
+					goto go_temp1;
+				}
+			}
+			else if (unitIn == 2)
+			{
+				negative_temp = -459.67;
+
+				if (tempIn < negative_temp) {
+					printf("Der eingegebene Wert liegt unter dem absolutem Nullpunkt! Bitte geben Sie einen neuen Wert ein:\n");
+					goto go_temp1;
+				}
+			}
+			else if (unitIn == 3)
+			{
+				negative_temp = 0;
+
+				if (tempIn < negative_temp) {
+					printf("Der eingegebene Wert liegt unter dem absolutem Nullpunkt! Bitte geben Sie einen neuen Wert ein:\n");
+					goto go_temp1;
+				}
+			}
+			else if (unitIn == 4)
+			{
+				negative_temp = -135.9038;
+
+				if (tempIn < negative_temp) {
+					printf("Der eingegebene Wert liegt unter dem absolutem Nullpunkt! Bitte geben Sie einen neuen Wert ein:\n");
+					goto go_temp1;
+				}
+			}
+		}
 
 		//Hier wird die Ausgabe so angepasst, dass der Nutzer sich mit der Eingabe 1 für grad Celsius, 2 für grad Fahrenheit
 		//und 3 für Kelvin entscheiden kann.
@@ -349,9 +388,9 @@ int main()
 	1.	Das gewünschte Programm wurde bereits zum Teil entwickelt (siehe Anhang). Erschließen Sie sich das gegebene Programm und kommentieren Sie anschließend den Quelltext.	FERTIG
 	2.	In die Konversionen haben sich Bugs eingeschlichen, so dass die berechneten Temperaturen teilweise falsch sind. Erstellen Sie eine sinnvolle Menge an Testfällen (bevor Sie sie anwenden),
 		finden Sie die Fehler und korrigieren Sie sie.	FERTIG
-	3.	Machen Sie das Programm robuster, indem Sie nur sinnvolle Eingaben erlauben (aus den gegebenen Einheiten, keine Temperatur unter dem absoluten Nullpunkt).
+	3.	Machen Sie das Programm robuster, indem Sie nur sinnvolle Eingaben erlauben (aus den gegebenen Einheiten, keine Temperatur unter dem absoluten Nullpunkt).	FERTIG
 	4.	Erweitern Sie das Programm um die Einheit Grad Rømer. 0°Rø entsprechhen dem Schmelzpunkt von Salzlake (-14,3°C), und 60°Rø entsprechen dem Siedepunkt von Wasser (100°C). FERTIG
 	5.	Stellen Sie das Ergebnis zusätzlich durch ein ASCII-Art-Thermometer dar (siehe Beispiel unten). Linkes Ende des Thermometers soll immer der Schmelzpunkt von Wasser sein (0°C),
-		rechter Endpunkt der Siedepunkt von Wasser (100°C). Die Skala soll immer mit der Ziel-Temperatureinheit beschriftet sein (nicht notwendigerweise °C).
+		rechter Endpunkt der Siedepunkt von Wasser (100°C). Die Skala soll immer mit der Ziel-Temperatureinheit beschriftet sein (nicht notwendigerweise °C).	FERTIG
 
 */
