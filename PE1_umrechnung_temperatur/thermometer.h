@@ -93,9 +93,9 @@ int ascii_thermometer(float tempOut, _int32 unitOut)
 	}
 	else if (unitOut == 4)
 	{
-		float differenz = 59.5 - 7;	//Differenz vom Nullpunkt und dem Siedepunkt
+		float differenz = 60 - 0;	//Differenz vom Nullpunkt und dem Siedepunkt
 		float value_pro_zeichen = differenz / 100;	//weil wir eine 100 Zeichen Skala haben
-		float tempOut_diff = tempOut - 7;	//Differenz vom Nullpunkt und von der Temperatur
+		float tempOut_diff = tempOut - 0;	//Differenz vom Nullpunkt und von der Temperatur
 		float new_temp = tempOut_diff / value_pro_zeichen;
 
 		printf("\n%f Zeichen\n", new_temp);	//DEBUG
@@ -118,7 +118,7 @@ int ascii_thermometer(float tempOut, _int32 unitOut)
 			}
 		}
 		printf("\n----------------------------------------------------------------------------------------------------\n");
-		printf("7%cRo												59.5%cRo\n", 248, 248);
+		printf("0%cRo												60%cRo\n", 248, 248);
 	}
 	return 0;
 }
